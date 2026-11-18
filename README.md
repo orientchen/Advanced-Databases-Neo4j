@@ -51,7 +51,7 @@ docker compose exec -T neo4j cypher-shell -u neo4j -p classroom123 "MATCH (n) RE
 
 ## Optional Neo4j Browser (visual graphs)
 
-Port **7474** provides the Neo4j Browser web page. Open it from the Codespaces **Ports** tab. The username is `neo4j`, and the demo password is `classroom123`. Bolt uses port **7687**.
+See [Codespaces Browser connection instructions](docs/neo4j-browser-codespaces.md) for the port 7474/7687 connection form. Port **7474** provides the Neo4j Browser web page. Open it from the Codespaces **Ports** tab. The username is `neo4j`, and the demo password is `classroom123`. Bolt uses port **7687**.
 
 **Note:** In browser-based Codespaces, opening the forwarded 7474 page does not guarantee that its JavaScript can connect to Bolt on 7687: `bolt://localhost:7687` refers to the user's computer, not the Codespace. For graphical access, opening the Codespace in **VS Code Desktop** with both ports forwarded may be easier. The terminal method works independently of this issue. Keep forwarded ports private.
 

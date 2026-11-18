@@ -6,8 +6,16 @@
   },
   "forwardPorts": [7474, 7687],
   "portsAttributes": {
-    "7474": { "label": "Neo4j Browser", "onAutoForward": "notify", "visibility": "private" },
-    "7687": { "label": "Neo4j Bolt", "onAutoForward": "ignore", "visibility": "private" }
+    "7474": {
+      "label": "Neo4j Browser (open /browser/)",
+      "onAutoForward": "notify",
+      "visibility": "private"
+    },
+    "7687": {
+      "label": "Neo4j Bolt (database connection)",
+      "onAutoForward": "notify",
+      "visibility": "private"
+    }
   },
   "postStartCommand": "docker compose up -d",
   "customizations": {
