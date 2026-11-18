@@ -4,23 +4,34 @@
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
-  "forwardPorts": [7474, 7687],
+  "forwardPorts": [
+    8501,
+    7474,
+    7687
+  ],
   "portsAttributes": {
     "7474": {
       "label": "Neo4j Browser (open /browser/)",
-      "onAutoForward": "notify",
+      "onAutoForward": "ignore",
       "visibility": "private"
     },
     "7687": {
       "label": "Neo4j Bolt (database connection)",
+      "onAutoForward": "ignore",
+      "visibility": "private"
+    },
+    "8501": {
+      "label": "Cypher Practice (open this)",
       "onAutoForward": "notify",
       "visibility": "private"
     }
   },
-  "postStartCommand": "docker compose up -d",
+  "postStartCommand": "docker compose up -d --build",
   "customizations": {
     "vscode": {
-      "extensions": ["redhat.vscode-yaml"]
+      "extensions": [
+        "redhat.vscode-yaml"
+      ]
     }
   }
 }

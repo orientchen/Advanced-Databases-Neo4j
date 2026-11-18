@@ -4,6 +4,11 @@ A GitHub Codespaces classroom lab for **CSCI 480 / CIS 680**. Practice graph dat
 
 ## Start
 
+**Recommended graphical interface:** [Browser-based Cypher Practice](docs/cypher-practice.md). Open port **8501** from Codespaces to write Cypher and visualize graphs without connecting your local browser directly to Neo4j Bolt.
+
+For an existing Codespace, run `git pull` and `docker compose up -d --build` first.
+
+
 1. On GitHub, select **Code → Codespaces → Create codespace on main**.
 2. Codespaces starts Neo4j using Docker Compose. The first launch downloads the container image.
 3. In the Codespaces terminal run:
