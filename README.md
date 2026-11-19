@@ -11,7 +11,7 @@ For an existing Codespace, run `git pull` and `docker compose up -d --build` fir
 
 1. On GitHub, select **Code → Codespaces → Create codespace on main**.
 2. Codespaces starts Neo4j using Docker Compose. The first launch downloads the container image.
-3. Open **Ports → 8501 → Open in Browser** to launch Cypher Practice. This web application starts automatically, but the sample graph may not be loaded yet.
+3. When Codespaces starts, a popup should offer to open **Cypher Practice** in your browser. Click **Open in Browser**. The application runs on port **8501**; you do not need to select the port manually. If you dismiss the popup, open **Ports → 8501 → Open in Browser** later. The sample graph may not be loaded yet.
 4. In the Codespaces terminal, load the sample dataset once:
 
 ~~~bash
