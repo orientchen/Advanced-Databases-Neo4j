@@ -65,7 +65,6 @@ docker compose exec -T neo4j cypher-shell -u neo4j -p classroom123 "MATCH (n) RE
 | `examples/02_queries.cypher` | Seven read-query examples |
 | `exercises/README.md` | Eight student assignments |
 | `exercises/student_template.cypher` | Blank student answer file |
-| `instructor/solutions.cypher` | Instructor reference answers |
 | `scripts/run.sh` | Run a Cypher file |
 | `scripts/check.sh` | Test the database connection |
 | `scripts/reset.sh` | Destructive reset of example data |
