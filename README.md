@@ -20,7 +20,8 @@ bash scripts/run.sh examples/01_setup.cypher
 
    The script creates four Student nodes, three Course nodes, and six ENROLLED_IN relationships. If the sample data is already present, you normally do not need to run it again. To check service status, optionally run `docker compose ps`.
 5. Return to port **8501**, run a Cypher query, and select **Graph** to visualize results. Optionally run `bash scripts/run.sh examples/02_queries.cypher` in the terminal to see prepared examples.
-6. Work through [student exercises](exercises/README.md) and write your queries in a copy of [student_template.cypher](exercises/student_template.cypher).
+6. Read the [Cypher syntax tutorial](docs/cypher-syntax-tutorial.md) for line-by-line explanations of the syntax used in the examples.
+7. Work through [student exercises](exercises/README.md) and write your queries in a copy of [student_template.cypher](exercises/student_template.cypher).
 
 If Neo4j is not running, use `docker compose up -d`. The run script waits for Neo4j to be ready.
 
@@ -63,6 +64,7 @@ docker compose exec -T neo4j cypher-shell -u neo4j -p classroom123 "MATCH (n) RE
 | `compose.yaml` | Neo4j Community service and persistent volume |
 | `examples/01_setup.cypher` | Repeatable sample university graph |
 | `examples/02_queries.cypher` | Seven read-query examples |
+| `docs/cypher-syntax-tutorial.md` | Beginner syntax tutorial with examples and expected results |
 | `exercises/README.md` | Eight student assignments |
 | `exercises/student_template.cypher` | Blank student answer file |
 | `scripts/run.sh` | Run a Cypher file |
