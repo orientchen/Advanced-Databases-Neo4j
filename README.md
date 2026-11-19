@@ -55,12 +55,6 @@ Run a single query:
 docker compose exec -T neo4j cypher-shell -u neo4j -p classroom123 "MATCH (n) RETURN count(n) AS nodes;"
 ~~~
 
-## Optional: Official Neo4j Browser
-
-**Use Cypher Practice on port 8501 for classroom exercises.** It connects to Neo4j internally, so students do not need to configure external Bolt access or open ports 7474/7687.
-
-Neo4j also offers its official Browser interface on port **7474**, using Bolt on port **7687**. In browser-based GitHub Codespaces, that connection can fail because of forwarded-port authentication and WebSocket restrictions, even when the Browser page loads. For advanced use only, see [Neo4j Browser connection instructions](docs/neo4j-browser-codespaces.md). Keep forwarded ports **Private**.
-
 ## Repository contents
 
 | Path | Purpose |
