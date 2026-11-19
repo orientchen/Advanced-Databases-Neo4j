@@ -11,15 +11,16 @@ For an existing Codespace, run `git pull` and `docker compose up -d --build` fir
 
 1. On GitHub, select **Code → Codespaces → Create codespace on main**.
 2. Codespaces starts Neo4j using Docker Compose. The first launch downloads the container image.
-3. In the Codespaces terminal run:
+3. Open **Ports → 8501 → Open in Browser** to launch Cypher Practice. This web application starts automatically, but the sample graph may not be loaded yet.
+4. In the Codespaces terminal, load the sample dataset once:
 
 ~~~bash
-docker compose ps
 bash scripts/run.sh examples/01_setup.cypher
-bash scripts/run.sh examples/02_queries.cypher
 ~~~
 
-4. Work through [student exercises](exercises/README.md) and write your queries in a copy of [student_template.cypher](exercises/student_template.cypher).
+   The script creates four Student nodes, three Course nodes, and six ENROLLED_IN relationships. If the sample data is already present, you normally do not need to run it again. To check service status, optionally run `docker compose ps`.
+5. Return to port **8501**, run a Cypher query, and select **Graph** to visualize results. Optionally run `bash scripts/run.sh examples/02_queries.cypher` in the terminal to see prepared examples.
+6. Work through [student exercises](exercises/README.md) and write your queries in a copy of [student_template.cypher](exercises/student_template.cypher).
 
 If Neo4j is not running, use `docker compose up -d`. The run script waits for Neo4j to be ready.
 
@@ -54,11 +55,11 @@ Run a single query:
 docker compose exec -T neo4j cypher-shell -u neo4j -p classroom123 "MATCH (n) RETURN count(n) AS nodes;"
 ~~~
 
-## Optional Neo4j Browser (visual graphs)
+## Optional: Official Neo4j Browser
 
-See [Codespaces Browser connection instructions](docs/neo4j-browser-codespaces.md) for the port 7474/7687 connection form. Port **7474** provides the Neo4j Browser web page. Open it from the Codespaces **Ports** tab. The username is `neo4j`, and the demo password is `classroom123`. Bolt uses port **7687**.
+**Use Cypher Practice on port 8501 for classroom exercises.** It connects to Neo4j internally, so students do not need to configure external Bolt access or open ports 7474/7687.
 
-**Note:** In browser-based Codespaces, opening the forwarded 7474 page does not guarantee that its JavaScript can connect to Bolt on 7687: `bolt://localhost:7687` refers to the user's computer, not the Codespace. For graphical access, opening the Codespace in **VS Code Desktop** with both ports forwarded may be easier. The terminal method works independently of this issue. Keep forwarded ports private.
+Neo4j also offers its official Browser interface on port **7474**, using Bolt on port **7687**. In browser-based GitHub Codespaces, that connection can fail because of forwarded-port authentication and WebSocket restrictions, even when the Browser page loads. For advanced use only, see [Neo4j Browser connection instructions](docs/neo4j-browser-codespaces.md). Keep forwarded ports **Private**.
 
 ## Repository contents
 
